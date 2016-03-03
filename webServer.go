@@ -8,6 +8,9 @@ import (
 	"strconv"
 )
 
+/**
+* example displaying static html file
+**/
 func Handler(response http.ResponseWriter, request *http.Request) {
 	log.Print("index.html handler")
 	response.Header().Set("Content-type", "text/html")
@@ -28,9 +31,12 @@ func AboutUsHandler(response http.ResponseWriter, request *http.Request) {
 	fmt.Fprint(response, string(webpage))
 }
 
+/**
+* example printing html directly
+**/
 func SimpleServeHTTP(response http.ResponseWriter, request *http.Request) {
 	response.Header().Set("Content-type", "text/html")
-	fmt.Fprint(response, "<h1>android</h1>Hello! what is your name")
+	fmt.Fprint(response, "<h1>robot</h1>Hello! what is your name")
 	fmt.Fprint(response, "what is your name!<br/>")
 	fmt.Fprint(response, "send me a message!")
 }
