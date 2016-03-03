@@ -11,7 +11,7 @@ import (
 /*
  example displaying static html file
 */
-func handler(response http.ResponseWriter, request *http.Request) {
+func homeHandler(response http.ResponseWriter, request *http.Request) {
 	log.Print("index.html handler")
 	response.Header().Set("Content-type", "text/html")
 	webpage, err := ioutil.ReadFile("index.html")
@@ -34,7 +34,7 @@ func aboutUsHandler(response http.ResponseWriter, request *http.Request) {
 /*
 example printing html directly
 */
-func simpleServeHTTP(response http.ResponseWriter, request *http.Request) {
+func contactSimpleServeHTTP(response http.ResponseWriter, request *http.Request) {
 	response.Header().Set("Content-type", "text/html")
 	fmt.Fprint(response, "<h1>robot</h1>Hello! what is your name")
 	fmt.Fprint(response, "what is your name!<br/>")
@@ -49,8 +49,8 @@ func main() {
 
 	mux := http.NewServeMux()
 	mux.Handle("/aboutus", http.HandlerFunc(aboutUsHandler))
-	mux.Handle("/contact", http.HandlerFunc(simpleServeHTTP))
-	mux.Handle("/", http.HandlerFunc(handler))
+	mux.Handle("/contact", http.HandlerFunc(contactSimpleServeHTTP))
+	mux.Handle("/", http.HandlerFunc(homeHandler))
 
 	log.Print("Listening on port " + portstring + " ... ")
 	errs := http.ListenAndServe(":"+portstring, mux)
