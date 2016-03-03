@@ -1,6 +1,4 @@
-[![Build Status](https://travis-ci.org/vancouverwill/golangExampleStaticWebPageWebServer.svg?branch=master)](https://travis-ci.org/vancouverwill/golangExampleStaticWebPageWebServer)
-
-[![Go Report Card](https://goreportcard.com/badge/github.com/vancouverwill/golangExampleStaticWebPageWebServer)](https://goreportcard.com/report/github.com/vancouverwill/golangExampleStaticWebPageWebServer)
+[![Build Status](https://travis-ci.org/vancouverwill/golangExampleStaticWebPageWebServer.svg?branch=master)](https://travis-ci.org/vancouverwill/golangExampleStaticWebPageWebServer)  [![Go Report Card](https://goreportcard.com/badge/github.com/vancouverwill/golangExampleStaticWebPageWebServer)](https://goreportcard.com/report/github.com/vancouverwill/golangExampleStaticWebPageWebServer)
 
 # golangExampleStaticWebPageWebServer
 
