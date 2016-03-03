@@ -1,7 +1,20 @@
 language: go
+sudo: false
 notificaitons:
   email:
     recipients: willmelbourne@gmail.com
     on_success: change
     on_failure: always
-before_script:
+before_script: 
+go:
+- tip
+before_install:
+- go get github.com/axw/gocov/gocov
+- go get github.com/mattn/goveralls
+- if ! go get github.com/golang/tools/cmd/cover; then go get golang.org/x/tools/cmd/cover;
+  fi
+script:
+- $HOME/gopath/bin/goveralls -service=travis-ci
+env:
+  global:
+    secure: eTQs33PRwHXcZfsVPXAM9JxyjEGE7bs/PDgcHozj6TF3ZEpjWlr3OueBusk+qqIfrltHjVPCS6qAVLDQ3LxmmfTb/on7+oKfIGzmRoI+EbBb4jF3rJ5tYrlsrND1caAGchjh3JCYBidTaSwkQpp3WScQ/BN4NjD0dBQj0B5j3691rpWQrpzv9ppsSysFX8i3I8lHsin3kvgPddr9xW5RatSYLWD5EEFcuvBAByircUK5pwd97QWkSZXeaL7WKh9GXCIZ9bEYiEJ5KsS2nP1Uk+WyBkOz/RWDNnKeEsSsRJyO4iM0f1qAH2W390Q9mJ1y4JnXAD31/EwEvJSCFWUC4s7IVV0yJD9XzF0ommqsw0rDtbt0MPm1q9BUjDwu5Ed3Fwv7S/IwkPw5eFnoCE4eA1cM0NeZIUmmOIIVubvUSZ+/Q513iyncCbP2Ro/5XmkH6z1xSefcfSV1u4MTvj6yUECXsrfot+ie0T1kXF8eUqaN1AU0g5XlGLEp3E4cyeMHs11312LTUzD/LAbP72oq1I54ShuHGscyVZhw1Y+DiCbOs2uCV6vGgbdo+r6z1ys6GFy8ROMPtQlscWuoQKVfsoH7g29uhz+D38i3oVc4olPeRK63Lk3SPIiBKdrrcIGJ+Rv3ynzZLlw68nzSZcpxjK4EAerD1vUf4npd9QllqzU=
