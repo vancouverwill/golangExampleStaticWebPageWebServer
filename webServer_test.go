@@ -15,7 +15,7 @@ func TestHomePageGet(t *testing.T) {
 	}
 
 	w := httptest.NewRecorder()
-	Handler(w, req)
+	handler(w, req)
 
 	if w.Code != 200 && w.Code != 202 {
 		t.Error("GET did not work as expected. the status was not ", http.StatusOK, ", it was ", w.Code)
@@ -36,7 +36,7 @@ func TestAboutUsGet(t *testing.T) {
 	}
 
 	w := httptest.NewRecorder()
-	AboutUsHandler(w, req)
+	aboutUsHandler(w, req)
 
 	if w.Code != 200 && w.Code != 202 {
 		t.Error("GET did not work as expected. the status was not ", http.StatusOK, ", it was ", w.Code)
