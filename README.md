@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/vancouverwill/golangExampleStaticWebPageWebServer.svg?branch=master)](https://travis-ci.org/vancouverwill/golangExampleStaticWebPageWebServer)
+
 # golangExampleStaticWebPageWebServer
 
 setup with `go install` and then `go build`
